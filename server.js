@@ -2,7 +2,8 @@ require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const connectDB = require('./src/db/connect')
-// const { swaggerUi, swaggerSpec } = require('./src/docs/swagger');
+const { swaggerUi, swaggerSpec } = require('./src/docs/swagger');
+const usuarioRouter = require('./src/routes/usuario.route')
 
 
 const PORT = process.env.PORT || 3000
@@ -11,7 +12,9 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+
+app.use('/api/usuario', usuarioRouter)
 
 const startServer = async () => {
     try {

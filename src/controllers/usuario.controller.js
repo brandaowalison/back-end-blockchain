@@ -30,7 +30,7 @@ const getUsuarios = async (req, res) => {
     }
 }
 
-const getUsuariosId = async (req, res) => {
+const getUsuarioId = async (req, res) => {
     const {id} = req.params
     if (!id || id.trim() === '') {
         return res.status(400).json({message: `ID não fornecido na URL da requisição.`})
@@ -115,4 +115,13 @@ const deleteUsuarioId = async (req, res) => {
         console.error('Erro ao deletar usuário:', err)
         res.status(500).json({error: 'Erro ao deletar usuário.'})
     }
+}
+
+module.exports = {
+    criarUsuario,
+    getUsuarios,
+    getUsuarioId,
+    login,
+    updateUsuario,
+    deleteUsuarioId
 }
