@@ -23,7 +23,7 @@ const usuarioSchema = new mongoose.Schema({
     senha: {
         type: String,
         required: true,
-        minlenght: 6
+        minlength: 6
     },
     walletAddress: {
         type: String,
@@ -50,7 +50,7 @@ usuarioSchema.methods.compararSenha = async function (senhaDigitada) {
 usuarioSchema.methods.gerarTokenJWT = function(){
     const jwt = require('jsonwebtoken')
     return jwt.sign(
-        {id: this._id, perfil: thiss.perfil},
+        {id: this._id, perfil: this.perfil},
         process.env.JWT_SECRET,
         {expiresIn: process.env.JWT_EXPIRES_IN || '1d'}
     )

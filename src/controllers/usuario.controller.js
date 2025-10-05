@@ -38,10 +38,9 @@ const getUsuarioId = async (req, res) => {
     try {
         const usuario = await Usuario.findById(id).select('-senha')
         if(!usuario) {
-            res.status(200).json(usuario)
-        } else {
-            return res.status(400).json({message: `Usuário não encontrado com essa id=${id}`})
+            return res.status(404).json({message: `Usuário não encontrado com essa id=${id}`})
         }
+        res.status(200).json(usuario)
     } catch (err) {
         console.error('Erro ao encontar usuário:', err)
         res.status(500).json({error: 'Erro ao encontrar usuário.'})
