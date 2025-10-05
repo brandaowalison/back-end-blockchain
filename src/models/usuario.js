@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
 
 const usuarioSchema = new mongoose.Schema({
-    tipoUsuario: {
+    perfil: {
         type: String,
         enum: ['empresa','individuo'],
         required: true
@@ -48,4 +47,14 @@ usuarioSchema.methods.compararSenha = async function (senhaDigitada) {
     return await bcrypt.compare(senhaDigitada, this.senha)
 }
 
-module.exports = mongoose.model('Usuario', usuarioSchema)
+usuarioSchema.methods.gerarTokenJWT = function(){
+    const jwt = require('jsonwebtoken')
+    return jwt.sign(
+        {id: this._id, perfil: thiss.perfil},
+        process.env.JWT_SECRET,
+        {expiresIn: process.env.JWT_EXPIRES_IN || '1d'}
+    )
+}
+
+const Usuario = mongoose.model('Usuario', usuarioSchema)
+module.exports = Usuario
