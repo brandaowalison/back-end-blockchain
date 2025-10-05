@@ -73,3 +73,46 @@ const login = async (req, res) => {
         res.status(500).json({error: 'Error ao realizar login'})
     }
 }
+
+const updateUsuario = async (req, res) => {
+    const {id} = req.params
+    if(req.body.senha && req.body.senha.trim() !=='') {
+        req.body.senha = await bcrypt.hash(req.body.senha, 10)
+    } else {
+        delete req.body.senha
+    }
+    try {
+        const usuario = await Usuario.findByIdAndUpdate(
+            {_id: id},
+            req.body,
+            {new: true}
+        )
+        if(!usuario) {
+            return res.status(404).json({message: `Usuário não encontrado com essa id=${id}`})
+        }
+        const usuarioResponse = usuario.toObject()
+        delete usuarioResponse.senha
+        res.status(200).json({message: 'Usuário atualizado com sucesso!', usuario: usuarioResponse})
+    } catch (err) {
+        console.error('Erro aos atualizar usuário.')
+        res.status(500).json({error: 'Erro ao atualizar usuário.'})
+    }
+}
+
+const deleteUsuarioId = async (req, res) => {
+    const {id} = req.params
+    if(!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json({message: 'ID inválido'})
+    }
+    
+    try {
+        const usuario = await User.deleteOne({_id: id})
+        if(usuario.deletedCount === 0) {
+          return  res.status(404).json({message: `Nenhum usuário encontrado com essa id=${id}.`})
+        }
+        res.status(200).json({message: `Usuário com ID=${id} foi deletado com sucesso!`})
+    } catch (err) {
+        console.error('Erro ao deletar usuário:', err)
+        res.status(500).json({error: 'Erro ao deletar usuário.'})
+    }
+}
