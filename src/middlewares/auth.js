@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const User = require('../models/user')
+const Usuario = require('../models/usuario')
 require('dotenv').config()
 
 async function authenticate(req, res, next) {
@@ -12,7 +12,7 @@ async function authenticate(req, res, next) {
     
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
-        req.user = await User.findById(decoded.id).select('-password')
+        req.user = await Usuario.findById(decoded.id).select('-senha')
         next()
     } catch (err) {
         console.error('Erro ao verificar JWT:', err.message)

@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs')
 const usuarioSchema = new mongoose.Schema({
     perfil: {
         type: String,
-        enum: ['empresa','individuo'],
+        enum: ['empresa','individuo', 'admin'],
         required: true
     },
     nome: {
@@ -28,12 +28,8 @@ const usuarioSchema = new mongoose.Schema({
     walletAddress: {
         type: String,
         default: null
-    },
-    criadoEm: {
-        type: Date,
-        default: Date.now
     }
-})
+}, {timestamps: true})
 
 usuarioSchema.pre('save', async function (next) {
     if (!this.isModified('senha')) return next()

@@ -9,8 +9,7 @@ const criarUsuario = async (req, res) => {
             nome: req.body.nome,
             email: req.body.email,
             senha: req.body.senha,
-            walletAddress: req.body.walletAddress,
-            criadoEm: req.body.criadoEm
+            walletAddress: req.body.walletAddress
         })
         await usuario.save()
         res.status(201).json({message: 'Usuário cadastrado com sucesso!', usuario: usuario})
@@ -105,7 +104,7 @@ const deleteUsuarioId = async (req, res) => {
     }
     
     try {
-        const usuario = await User.deleteOne({_id: id})
+        const usuario = await Usuario.deleteOne({_id: id})
         if(usuario.deletedCount === 0) {
           return  res.status(404).json({message: `Nenhum usuário encontrado com essa id=${id}.`})
         }

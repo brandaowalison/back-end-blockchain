@@ -1,7 +1,6 @@
 const express = require('express')
 const usuarioController = require('../controllers/usuario.controller')
-const { model } = require('mongoose')
-// const {authenticate, authorize} = require('../middlewares/auth')
+const {authenticate, authorize} = require('../middlewares/auth')
 const router = express.Router()
 
 /**
@@ -35,13 +34,9 @@ const router = express.Router()
  *           type: string
  *           description: Senha do usuário (não será retornada)
  *         walletAddress:
- *            type: date
+ *            type: string
  *            default: null
  *            description: Outro método de login
- *         criadoEm:
- *            type: Date
- *            default: Date.now
- *            description: Data de criação
  *         token:
  *           type: string
  *           description: Token JWT gerado para autenticação
@@ -135,7 +130,7 @@ router.post('/login', usuarioController.login)
  *       500:
  *         description: Erro ao listar usuários
  */
-router.get('/', usuarioController.getUsuarios)
+router.get('/', authenticate, authorize('admin'), usuarioController.getUsuarios)
 
 /**
  * @swagger
@@ -162,7 +157,7 @@ router.get('/', usuarioController.getUsuarios)
  *       500:
  *         description: Erro ao buscar o usuário
  */
-router.get('/:id', usuarioController.getUsuarioId)
+router.get('/:id', authenticate, authorize(['individuo','empresa','admin']), usuarioController.getUsuarioId)
 
 /**
  * @swagger
@@ -200,7 +195,7 @@ router.get('/:id', usuarioController.getUsuarioId)
  *       500:
  *         description: Erro ao atualizar o usuário
  */
-router.put('/:id', usuarioController.updateUsuario)
+router.put('/:id', authenticate, authorize('admin'), usuarioController.updateUsuario)
 
 /**
  * @swagger
@@ -223,6 +218,6 @@ router.put('/:id', usuarioController.updateUsuario)
  *       500:
  *         description: Erro ao deletar o usuário
  */
-router.delete('/:id', usuarioController.deleteUsuarioId)
+router.delete('/:id', authenticate, authorize('admin'), usuarioController.deleteUsuarioId)
 
 module.exports = router
