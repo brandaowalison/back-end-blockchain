@@ -3,7 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const connectDB = require('./src/db/connect')
 const { swaggerUi, swaggerSpec } = require('./src/docs/swagger');
-const usuarioRouter = require('./src/routes/usuario.route')
+const usuarioRouter = require('./src/router/usuario.route')
 
 
 const PORT = process.env.PORT || 3000
