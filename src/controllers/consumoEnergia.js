@@ -1,5 +1,4 @@
 const ConsumoEnergia = require('../models/consumoEnergia')
-const Usuario = require('../models/usuario')
 
 const criarConsumoEnergia = async (req, res) => {
     try {

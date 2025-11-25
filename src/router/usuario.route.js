@@ -87,7 +87,7 @@ router.post('/', usuarioController.criarUsuario)
  *               email:
  *                 type: string
  *                 description: E-mail do usuário
- *               password:
+ *               senha:
  *                 type: string
  *                 description: Senha do usuário
  *     responses:

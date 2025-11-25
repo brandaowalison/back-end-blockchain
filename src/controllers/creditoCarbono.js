@@ -1,6 +1,4 @@
 const CreditoCarbono = require('../models/creditoCarbono')
-const Usuario = require('../models/usuario')
-
 
 const criarCreditoCarbono = async (req, res) => {
     try {
