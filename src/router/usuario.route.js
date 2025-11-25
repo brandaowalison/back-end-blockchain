@@ -14,7 +14,7 @@ const router = express.Router()
  * @swagger
  * components:
  *   schemas:
- *     Usuário:
+ *     Usuario:
  *       type: object
  *       properties:
  *         _id:
@@ -101,7 +101,7 @@ router.post('/', usuarioController.criarUsuario)
  *                 message:
  *                   type: string
  *                 user:
- *                   $ref: '#/components/schemas/User'
+ *                   $ref: '#/components/schemas/Usuario'
  *                 token:
  *                   type: string
  *                   description: Token JWT gerado
@@ -126,7 +126,7 @@ router.post('/login', usuarioController.login)
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/User'
+ *                 $ref: '#/components/schemas/Usuario'
  *       500:
  *         description: Erro ao listar usuários
  */
@@ -151,7 +151,7 @@ router.get('/', authenticate, authorize('admin'), usuarioController.getUsuarios)
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Usuario'
  *       404:
  *         description: Usuário não encontrado
  *       500:
@@ -177,7 +177,7 @@ router.get('/:id', authenticate, authorize(['individuo','empresa','admin']), usu
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/User'
+ *             $ref: '#/components/schemas/Usuario'
  *     responses:
  *       200:
  *         description: Usuário atualizado com sucesso
@@ -189,7 +189,7 @@ router.get('/:id', authenticate, authorize(['individuo','empresa','admin']), usu
  *                 message:
  *                   type: string
  *                 updatedUser:
- *                   $ref: '#/components/schemas/User'
+ *                   $ref: '#/components/schemas/Usuario'
  *       400:
  *         description: ID inválido ou dados do usuário incorretos
  *       500:

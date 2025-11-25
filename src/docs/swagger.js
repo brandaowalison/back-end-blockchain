@@ -11,7 +11,7 @@ const options = {
         },
         servers: [
             {
-                url: 'http://localhost.com/'
+                url: 'https://back-end-blockchain.onrender.com/'
             },
         ],
         components: {
@@ -29,7 +29,7 @@ const options = {
             }
         ]
     },
-    apis: ['./src/routes/*.js']
+    apis: ['./src/router/*.js']
 }
 
 const swaggerSpec = swaggerJSDoc(options)
