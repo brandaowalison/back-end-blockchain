@@ -1,4 +1,3 @@
-const { useDebugValue } = require('react')
 const ConsumoEnergia = require('../models/consumoEnergia')
 const Usuario = require('../models/usuario')
 

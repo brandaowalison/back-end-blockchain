@@ -5,6 +5,7 @@ const connectDB = require('./src/db/connect')
 const { swaggerUi, swaggerSpec } = require('./src/docs/swagger');
 const usuarioRouter = require('./src/router/usuario.route')
 const ConsumoRouter = require('./src/router/consumoE.route')
+const CreditoRouter = require('./src/router/creditoC.route')
 
 
 const PORT = process.env.PORT || 3000
@@ -17,6 +18,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 app.use('/api/usuario', usuarioRouter)
 app.use('/api/Consumo', ConsumoRouter)
+app.use('/api/Credito', CreditoRouter)
 
 const startServer = async () => {
     try {
