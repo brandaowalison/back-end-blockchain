@@ -1,5 +1,5 @@
 const express = require('express')
-const consumoController = require('../controllers/consumoEnergia.controller')
+const consumoController = require('../controllers/consumoEnergia')
 const {authenticate, authorize} = require('../middlewares/auth')
 const router = express.Router()
 
@@ -19,22 +19,22 @@ const router = express.Router()
  *       properties:
  *         _id:
  *           type: string
- *           description: ID do registro de consumo
+ *           description: "ID do registro de consumo"
  *         idUsuarioFK:
  *           type: string
- *           description: ID do usuário relacionado
+ *           description: "ID do usuário relacionado"
  *         periodo:
  *           type: string
- *           description: Período do consumo (ex: 2025-11)
+ *           description: "Período do consumo (ex: 2025-11)"
  *         kwhConsumidos:
  *           type: number
- *           description: Total de kWh consumidos
+ *           description: "Total de kWh consumidos"
  *         fatorConversao:
  *           type: number
- *           description: Fator de conversão aplicado
+ *           description: "Fator de conversão aplicado"
  *         emissaoGerada:
  *           type: number
- *           description: Emissão gerada relacionada ao consumo
+ *           description: "Emissão gerada relacionada ao consumo"
  */
 
 /**

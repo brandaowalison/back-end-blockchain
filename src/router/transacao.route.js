@@ -1,5 +1,5 @@
 const express = require('express')
-const transacaoCompensacaoController = require('../controllers/transacaoCompensacao.controller')
+const transacaoCompensacaoController = require('../controllers/transacaoComp')
 const {authenticate, authorize} = require('../middlewares/auth')
 const router = express.Router()
 

@@ -1,5 +1,5 @@
 const express = require('express')
-const frotaVeiculoController = require('../controllers/frotaVeiculo.controller')
+const frotaVeiculoController = require('../controllers/frotaVeiculo')
 const {authenticate, authorize} = require('../middlewares/auth')
 const router = express.Router()
 

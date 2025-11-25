@@ -1,5 +1,5 @@
 const express = require('express')
-const emissaoController = require('../controllers/emissao.controller')
+const emissaoController = require('../controllers/emissao')
 const {authenticate, authorize} = require('../middlewares/auth')
 const router = express.Router()
 

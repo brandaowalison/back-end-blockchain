@@ -1,5 +1,5 @@
 const express = require('express')
-const creditoController = require('../controllers/creditoCarbono.controller')
+const creditoController = require('../controllers/creditoCarbono')
 const {authenticate, authorize} = require('../middlewares/auth')
 const router = express.Router()
 
