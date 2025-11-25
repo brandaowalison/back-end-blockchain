@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const emissaoSchema = new mongoose({
+const emissaoSchema = new mongoose.Schema({
     idUsuarioFK: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Usuario', required: true
