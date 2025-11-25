@@ -25,7 +25,7 @@ const router = express.Router()
  *           description: ID do usuário relacionado
  *         periodo:
  *           type: string
- *           description: Período do consumo (ex: 2025-11)
+ *           description: "Período do consumo (ex: 2025-11)"
  *         kwhConsumidos:
  *           type: number
  *           description: Total de kWh consumidos

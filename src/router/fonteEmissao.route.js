@@ -22,7 +22,7 @@ const router = express.Router()
  *           description: ID da fonte de emissão
  *         tipoFonte:
  *           type: string
- *           description: Tipo da fonte (Ex: veículo, indústria, etc.)
+ *           description: "Tipo da fonte (Ex: veículo, indústria, etc.)"
  *         descricao:
  *           type: string
  *           description: Descrição opcional da fonte
