@@ -83,7 +83,7 @@ const deleteConsumoById = async (req, res) => {
     }
 }
 
-modulo.exports = {
+module.exports = {
     criarConsumoEnergia,
     getConsumo,
     getConsumoId,
