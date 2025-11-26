@@ -55,7 +55,7 @@ const router = express.Router()
  *       500:
  *         description: Erro ao cadastrar fonte
  */
-router.post('/', authenticate, authorize('admin'), fonteEmissaoController.criarFonteEmissao)
+router.post('/', authenticate, authorize(['individuo','empresa','admin']), fonteEmissaoController.criarFonteEmissao)
 
 /**
  * @swagger
@@ -138,7 +138,7 @@ router.get('/:id', authenticate, authorize(['admin','empresa','individuo']), fon
  *       500:
  *         description: Erro ao atualizar fonte
  */
-router.put('/:id', authenticate, authorize('admin'), fonteEmissaoController.updateFonteEmissao)
+router.put('/:id', authenticate, authorize(['individuo','empresa','admin']), fonteEmissaoController.updateFonteEmissao)
 
 /**
  * @swagger
@@ -160,6 +160,6 @@ router.put('/:id', authenticate, authorize('admin'), fonteEmissaoController.upda
  *       500:
  *         description: Erro ao deletar fonte
  */
-router.delete('/:id', authenticate, authorize('admin'), fonteEmissaoController.deleteFonteEmissaoById)
+router.delete('/:id', authenticate, authorize(['individuo','empresa','admin']), fonteEmissaoController.deleteFonteEmissaoById)
 
 module.exports = router

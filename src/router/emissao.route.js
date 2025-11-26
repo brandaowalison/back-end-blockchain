@@ -156,7 +156,7 @@ router.get('/:id', authenticate, authorize(['admin','empresa','individuo']), emi
  *       500:
  *         description: Erro ao atualizar emissão
  */
-router.put('/:id', authenticate, authorize('admin'), emissaoController.updateEmissao)
+router.put('/:id', authenticate, authorize(['individuo','empresa','admin']), emissaoController.updateEmissao)
 
 /**
  * @swagger
@@ -178,6 +178,6 @@ router.put('/:id', authenticate, authorize('admin'), emissaoController.updateEmi
  *       500:
  *         description: Erro ao deletar emissão
  */
-router.delete('/:id', authenticate, authorize('admin'), emissaoController.deleteEmissaoById)
+router.delete('/:id', authenticate, authorize(['individuo','empresa','admin']), emissaoController.deleteEmissaoById)
 
 module.exports = router

@@ -149,7 +149,7 @@ router.get('/:id', authenticate, authorize(['admin','empresa','individuo']), cre
  *       500:
  *         description: Erro ao atualizar crédito
  */
-router.put('/:id', authenticate, authorize('admin'), creditoController.updateCredito)
+router.put('/:id', authenticate, authorize(['individuo','empresa','admin']), creditoController.updateCredito)
 
 /**
  * @swagger
@@ -171,6 +171,6 @@ router.put('/:id', authenticate, authorize('admin'), creditoController.updateCre
  *       500:
  *         description: Erro ao deletar crédito
  */
-router.delete('/:id', authenticate, authorize('admin'), creditoController.deleteCreditoById)
+router.delete('/:id', authenticate, authorize(['individuo','empresa','admin']), creditoController.deleteCreditoById)
 
 module.exports = router

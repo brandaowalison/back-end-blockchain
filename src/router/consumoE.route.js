@@ -147,7 +147,7 @@ router.get('/:id', authenticate, authorize(['admin','empresa','individuo']), con
  *       500:
  *         description: Erro ao atualizar consumo
  */
-router.put('/:id', authenticate, authorize('admin'), consumoController.updateConsumo)
+router.put('/:id', authenticate, authorize(['individuo','empresa','admin']), consumoController.updateConsumo)
 
 /**
  * @swagger
@@ -169,6 +169,6 @@ router.put('/:id', authenticate, authorize('admin'), consumoController.updateCon
  *       500:
  *         description: Erro ao deletar consumo
  */
-router.delete('/:id', authenticate, authorize('admin'), consumoController.deleteConsumoById)
+router.delete('/:id', authenticate, authorize(['individuo','empresa','admin']), consumoController.deleteConsumoById)
 
 module.exports = router

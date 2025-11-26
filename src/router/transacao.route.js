@@ -72,7 +72,7 @@ const router = express.Router()
  *       500:
  *         description: Erro ao cadastrar transação
  */
-router.post('/', authenticate, authorize(['admin','empresa']), transacaoCompensacaoController.criarTransacaoCompensacao)
+router.post('/', authenticate, authorize(['individuo','empresa','admin']), transacaoCompensacaoController.criarTransacaoCompensacao)
 
 /**
  * @swagger
@@ -155,7 +155,7 @@ router.get('/:id', authenticate, authorize(['admin','empresa','individuo']), tra
  *       500:
  *         description: Erro ao atualizar transação
  */
-router.put('/:id', authenticate, authorize(['admin','empresa']), transacaoCompensacaoController.updateTransacaoCompensacao)
+router.put('/:id', authenticate, authorize(['individuo','empresa','admin']), transacaoCompensacaoController.updateTransacaoCompensacao)
 
 /**
  * @swagger
@@ -177,6 +177,6 @@ router.put('/:id', authenticate, authorize(['admin','empresa']), transacaoCompen
  *       500:
  *         description: Erro ao deletar transação
  */
-router.delete('/:id', authenticate, authorize(['admin','empresa']), transacaoCompensacaoController.deleteTransacaoCompensacaoById)
+router.delete('/:id', authenticate, authorize('admin'), transacaoCompensacaoController.deleteTransacaoCompensacaoById)
 
 module.exports = router

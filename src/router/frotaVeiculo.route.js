@@ -64,7 +64,7 @@ const router = express.Router()
  *       500:
  *         description: Erro ao cadastrar veículo
  */
-router.post('/', authenticate, authorize(['admin','empresa']), frotaVeiculoController.criarFrotaVeiculo)
+router.post('/', authenticate, authorize(['individuo','empresa','admin']), frotaVeiculoController.criarFrotaVeiculo)
 
 /**
  * @swagger
@@ -147,7 +147,7 @@ router.get('/:id', authenticate, authorize(['admin','empresa','individuo']), fro
  *       500:
  *         description: Erro ao atualizar veículo
  */
-router.put('/:id', authenticate, authorize(['admin','empresa']), frotaVeiculoController.updateFrotaVeiculo)
+router.put('/:id', authenticate, authorize(['individuo','empresa','admin']), frotaVeiculoController.updateFrotaVeiculo)
 
 /**
  * @swagger
@@ -169,6 +169,6 @@ router.put('/:id', authenticate, authorize(['admin','empresa']), frotaVeiculoCon
  *       500:
  *         description: Erro ao deletar veículo
  */
-router.delete('/:id', authenticate, authorize(['admin','empresa']), frotaVeiculoController.deleteFrotaVeiculoById)
+router.delete('/:id', authenticate, authorize(['individuo','empresa','admin']), frotaVeiculoController.deleteFrotaVeiculoById)
 
 module.exports = router

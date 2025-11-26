@@ -130,7 +130,7 @@ router.post('/login', usuarioController.login)
  *       500:
  *         description: Erro ao listar usuários
  */
-router.get('/', authenticate, authorize('admin'), usuarioController.getUsuarios)
+router.get('/', authenticate, authorize(['individuo','empresa','admin']), usuarioController.getUsuarios)
 
 /**
  * @swagger
@@ -195,7 +195,7 @@ router.get('/:id', authenticate, authorize(['individuo','empresa','admin']), usu
  *       500:
  *         description: Erro ao atualizar o usuário
  */
-router.put('/:id', authenticate, authorize('admin'), usuarioController.updateUsuario)
+router.put('/:id', authenticate, authorize(['individuo','empresa','admin']), usuarioController.updateUsuario)
 
 /**
  * @swagger
