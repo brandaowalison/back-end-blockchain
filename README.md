@@ -95,6 +95,7 @@ Outras rotas presentes no projeto (exemplos):
 - `/api/FonteEmissao` — fontes de emissão
 - `/api/FrotaVeiculo` — frota de veículos
 - `/api/Transacao` — transações de compensação
+- `/api/Projeto` — projeto energetico
 
 Consulte `src/router` para detalhes de cada rota e `src/controllers` para o comportamento exato.
 

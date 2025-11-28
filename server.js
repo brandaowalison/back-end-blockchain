@@ -10,6 +10,7 @@ const EmissaoRouter = require('./src/router/emissao.route')
 const FonteEmissaoRouter = require('./src/router/fonteEmissao.route')
 const FrotaVeiculoRouter = require('./src/router/frotaVeiculo.route')
 const TransacaoCompensacaoRouter = require('./src/router/transacao.route')
+const ProjetoEnergeticoRouter = require('./src/router/projeto.route')
 
 
 const PORT = process.env.PORT || 3000
@@ -27,6 +28,7 @@ app.use('/api/Emissao', EmissaoRouter)
 app.use('/api/FonteEmissao', FonteEmissaoRouter)
 app.use('/api/FrotaVeiculo', FrotaVeiculoRouter)
 app.use('/api/Transacao', TransacaoCompensacaoRouter)
+app.use('/api/projeto', ProjetoEnergeticoRouter)
 
 const startServer = async () => {
     try {
