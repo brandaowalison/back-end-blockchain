@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const frotaVeiculoSchema = new mongoose.Schema({
-    idUsuarioFK: { 
+    idEmissaoFK: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Usuario', 
         required: true 

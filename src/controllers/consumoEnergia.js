@@ -3,7 +3,7 @@ const ConsumoEnergia = require('../models/consumoEnergia')
 const criarConsumoEnergia = async (req, res) => {
     try {
         const consumoE = new ConsumoEnergia({
-            idUsuarioFK: req.body.idUsuarioFK,
+            idEmissaoFK: req.body.idUsuarioFK,
             periodo: req.body.periodo,
             kwhConsumidos: req.body.kwhconsumidos,
             fatorConversao: req.body.fatorConversao,

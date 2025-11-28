@@ -20,9 +20,9 @@ const router = express.Router()
  *         _id:
  *           type: string
  *           description: ID do veículo na frota
- *         idUsuarioFK:
+ *         idEmissaoFK:
  *           type: string
- *           description: ID do usuário responsável pelo veículo
+ *           description: ID de emissao 
  *         tipoCombustivel:
  *           type: string
  *           description: Tipo de combustível utilizado

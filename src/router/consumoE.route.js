@@ -20,9 +20,9 @@ const router = express.Router()
  *         _id:
  *           type: string
  *           description: ID do registro de consumo
- *         idUsuarioFK:
+ *         idUEmissaoFK:
  *           type: string
- *           description: ID do usuário relacionado
+ *           description: ID da emissao relacionada
  *         periodo:
  *           type: string
  *           description: "Período do consumo (ex: 2025-11)"

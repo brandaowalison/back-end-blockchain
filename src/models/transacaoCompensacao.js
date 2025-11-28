@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const transacaoCompensacaoSchema = new mongoose.Schema({
-    idCreditoFK: { 
+    idProjetoFK: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'CreditoCarbono', 
         required: true 

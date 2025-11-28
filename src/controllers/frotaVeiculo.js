@@ -3,7 +3,7 @@ const FrotaVeiculo = require('../models/frotaVeiculo')
 const criarFrotaVeiculo = async (req, res) => {
     try {
         const veiculo = new FrotaVeiculo({
-            idUsuarioFK: req.body.idUsuarioFK,
+            idEmissaoFK: req.body.idUsuarioFK,
             tipoCombustivel: req.body.tipoCombustivel,
             consumoLitros: req.body.consumoLitros,
             fatorConversao: req.body.fatorConversao,

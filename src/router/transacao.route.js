@@ -20,9 +20,9 @@ const router = express.Router()
  *         _id:
  *           type: string
  *           description: ID da transação
- *         idCreditoFK:
+ *         idProjetoFK:
  *           type: string
- *           description: ID do crédito de carbono associado
+ *           description: ID do projeto energetico associado
  *         idUsuarioFK:
  *           type: string
  *           description: ID do usuário associado à transação
