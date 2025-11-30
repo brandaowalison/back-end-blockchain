@@ -3,7 +3,7 @@ const TransacaoCompensacao = require('../models/transacaoCompensacao')
 const criarTransacaoCompensacao = async (req, res) => {
     try {
         const transacao = new TransacaoCompensacao({
-            idProjetoFK: req.body.idCreditoFK,
+            idProjetoFK: req.body.idProjetoFK,
             idUsuarioFK: req.body.idUsuarioFK,
             idEmissaoFK: req.body.idEmissaoFK,
             quantidadeutilizada: req.body.quantidadeutilizada,
