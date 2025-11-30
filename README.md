@@ -71,7 +71,7 @@ A documentação interativa está disponível em: `http://localhost:<PORT>/api-d
 Base: `/api`
 
 - `/api/usuario` (POST) — criar usuário
-	- Corpo (JSON): `{ "perfil": "empresa|individuo|admin", "nome": "Nome", "email": "ex@dominio.com", "senha": "senha123", "walletAddress": "opcional" }`
+	- Corpo (JSON): `{ "perfil": "empresa|individuo|admin", "nome": "Nome", "email": "ex@dominio.com", "senha": "senha123", "walletAddress": "opcional", "saldoCompra" }`
 	- Resposta: 201 com objeto do usuário (senha não é retornada)
 
 - `/api/usuario/login` (POST) — login
