@@ -6,7 +6,11 @@ const criarProjeto = async (req, res) => {
       nome: req.body.nome,
       tipo: req.body.tipo,
       descricao: req.body.descricao,
-      saldoToken: req.body.saldoToken
+      saldoToken: req.body.saldoToken,
+      preco: req.body.preco,
+      reducao: req.body.reducao,
+      local: req.body.local,
+      status: req.body.status
     })
 
     await projeto.save()

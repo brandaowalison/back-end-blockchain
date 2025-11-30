@@ -9,7 +9,8 @@ const criarUsuario = async (req, res) => {
             nome: req.body.nome,
             email: req.body.email,
             senha: req.body.senha,
-            walletAddress: req.body.walletAddress
+            walletAddress: req.body.walletAddress,
+            saldoCompra: req.body.saldoCompra
         })
         await usuario.save()
         res.status(201).json({message: 'Usuário cadastrado com sucesso!', usuario: usuario})

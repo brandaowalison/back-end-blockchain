@@ -22,13 +22,13 @@ app.use(express.json())
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 app.use('/api/usuario', usuarioRouter)
-app.use('/api/Consumo', ConsumoRouter)
+app.use('/api/ConsumoEnergia', ConsumoRouter)
 app.use('/api/Credito', CreditoRouter)
 app.use('/api/Emissao', EmissaoRouter)
 app.use('/api/FonteEmissao', FonteEmissaoRouter)
 app.use('/api/FrotaVeiculo', FrotaVeiculoRouter)
 app.use('/api/Transacao', TransacaoCompensacaoRouter)
-app.use('/api/projeto', ProjetoEnergeticoRouter)
+app.use('/api/Projeto', ProjetoEnergeticoRouter)
 
 const startServer = async () => {
     try {

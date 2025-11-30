@@ -37,6 +37,9 @@ const router = express.Router()
  *            type: string
  *            default: null
  *            description: Outro método de login
+ *         saldoCompra:
+ *            type: number
+ *            description: Saldo de tokens comprados
  *         token:
  *           type: string
  *           description: Token JWT gerado para autenticação

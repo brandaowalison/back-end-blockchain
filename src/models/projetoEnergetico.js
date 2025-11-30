@@ -7,7 +7,14 @@ const projetoSchema = new mongoose.Schema({
         enum: ['solar','eolica','reflorestamento','eficiencia'],
     },
     descricao: String,
-    saldoToken: Number
+    saldoToken: Number,
+    preco: Number,
+    reducao: Number,
+    local: String,
+    status: {
+        type: String,
+        enum: ['verificado','pendente']
+    }
 })
 
 const Projeto = mongoose.model('Projeto', projetoSchema)

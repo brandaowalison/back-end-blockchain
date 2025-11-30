@@ -28,7 +28,8 @@ const usuarioSchema = new mongoose.Schema({
     walletAddress: {
         type: String,
         default: null
-    }
+    },
+    saldoCompra: Number
 }, {timestamps: true})
 
 usuarioSchema.pre('save', async function (next) {
