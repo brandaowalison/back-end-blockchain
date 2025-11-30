@@ -33,11 +33,14 @@ const router = express.Router()
  *         saldoToken:
  *           type: number
  *           description: Saldo de tokens associado ao projeto
- *         preco: number
+ *         preco:
+ *           type: number
  *           description: Preço do tokens associado ao projeto
- *         reducao: number
+ *         reducao:
+ * '         type: number
  *           description: Redução de CO2 associado ao projeto
- *         local: string
+ *         local:
+ *           type: string
  *           description: Local associado ao projeto
  *         status:
  *           type: string
