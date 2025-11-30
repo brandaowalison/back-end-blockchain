@@ -37,7 +37,7 @@ const router = express.Router()
  *           type: number
  *           description: Preço do tokens associado ao projeto
  *         reducao:
- * '         type: number
+ *           type: number
  *           description: Redução de CO2 associado ao projeto
  *         local:
  *           type: string
